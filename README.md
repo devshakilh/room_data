@@ -2,14 +2,14 @@ Rate Calendar Component
 Description
 This project implements a Rate Calendar component using TypeScript, ReactJS/NextJS, Material UI, and React Query. It fetches data from a Rate Calendar API to display room rates and availability over a specified date range.
 
---project demo codesanbox and live (https://www.awesomescreenshot.com/video/28978663?key=aaa54b7283890e6cf3d1d0979bba92e2)
-Tech Stack
-TypeScript
-ReactJS / NextJS
-Material UI
-React Query
+#-project demo codesanbox and live (https://www.awesomescreenshot.com/video/28978663?key=aaa54b7283890e6cf3d1d0979bba92e2)
+#Tech Stack
+-TypeScript
+-ReactJS / NextJS
+-Material UI
+-React Query
 Installation
-Clone the repository:
+-Clone the repository:
 
 bash
 Copy code
