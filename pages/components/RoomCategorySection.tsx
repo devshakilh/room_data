@@ -44,77 +44,7 @@
 
 
 
-// import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 
-// import { format, parseISO } from 'date-fns';
-// import { IRoomCategory } from '../types/IRoomCategory';
-
-// interface RoomCategorySectionProps {
-//   roomCategory: IRoomCategory;
-// }
-
-// const RoomCategorySection = ({ roomCategory }: RoomCategorySectionProps) => {
-//   const dates = roomCategory.inventory_calendar.map((inventory) => inventory.date);
-
-//   return (
-//     <TableContainer component={Paper}>
-//       <Table>
-//         <TableHead>
-//           <TableRow>
-//             <TableCell>Date</TableCell>
-//             {dates.map((date, index) => (
-//               <TableCell key={index}>{format(parseISO(date), 'MM/dd/yyyy (EEE)')}</TableCell>
-//             ))}
-//           </TableRow>
-//         </TableHead>
-//         <TableBody>
-//           <TableRow>
-//             <TableCell>Room Name</TableCell>
-//             {dates.map((_, index) => (
-//               <TableCell key={index}>{roomCategory.name}</TableCell>
-//             ))}
-//           </TableRow>
-//           <TableRow>
-//             <TableCell>Status</TableCell>
-//             {roomCategory.inventory_calendar.map((inventory) => (
-//               <TableCell key={inventory.id}>{inventory.status ? 'Sellable' : 'Not Sellable'}</TableCell>
-//             ))}
-//           </TableRow>
-//           <TableRow>
-//             <TableCell>Rooms to Sell</TableCell>
-//             {roomCategory.inventory_calendar.map((inventory) => (
-//               <TableCell key={inventory.id}>{inventory.available}</TableCell>
-//             ))}
-//           </TableRow>
-//           <TableRow>
-//             <TableCell>Net Booked</TableCell>
-//             {roomCategory.inventory_calendar.map((inventory) => (
-//               <TableCell key={inventory.id}>{inventory.booked}</TableCell>
-//             ))}
-//           </TableRow>
-
-// <TableRow>
-// <TableCell>Standard Rate</TableCell>
-
-//             {dates.map((_, index) => (
-//               <TableCell key={index}>{roomCategory.occupancy}</TableCell>
-//             ))}
-           
-// </TableRow>
-
-//           {/* <TableRow>
-           
-//             {roomCategory.inventory_calendar.map((inventory) => (
-//               <TableCell key={inventory.id}>{inventory.rate}</TableCell>
-//             ))}
-//           </TableRow> */}
-//         </TableBody>
-//       </Table>
-//     </TableContainer>
-//   );
-// };
-
-// export default RoomCategorySection;
 
 
 

@@ -11,7 +11,7 @@ const RoomCard = ({ roomCategory, onSelect }: RoomCardProps) => (
     <CardContent>
       <Typography variant="h6">{roomCategory.name}</Typography>
       {/* <Typography>Status: {roomCategory.status ? 'Available' : 'Not Available'}</Typography> */}
-      <Typography>Rooms to Sell: {roomCategory.rooms_to_sell}</Typography>
+      <Typography>Rooms to Sell: {roomCategory.occupancy}</Typography>
       <Typography>Standard Rate: ${roomCategory.standard_rate}</Typography>
       <Button onClick={onSelect}>View Details</Button>
     </CardContent>
