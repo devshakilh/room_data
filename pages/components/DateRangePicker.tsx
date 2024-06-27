@@ -3,6 +3,11 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import TextField from '@mui/material/TextField';
+import { Typography } from '@mui/material';
+import Link from 'next/link';
+
+
+
 
 interface DateRangePickerProps {
   onDateChange: (dateRange: [string | null, string | null]) => void;
@@ -33,8 +38,13 @@ const DateRangePickerComponent: React.FC<DateRangePickerProps> = ({ onDateChange
   };
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-     <div className='data_filed mt-8 flex gap-3 items-center'>
+    <LocalizationProvider   dateAdapter={AdapterDayjs}>
+       <div className='bg-white p-12 m-10 rounded-3xl'>
+       <Typography variant="h4" component="h1" gutterBottom>
+    <Link href='/' ><span className='header_text '>Rate Calendar</span></Link>
+  </Typography>
+     <div className='data_filed    mt-8 flex gap-3 items-center'>
+     
      <div>
         <DatePicker
           date={selectedStartDate}
@@ -51,6 +61,7 @@ const DateRangePickerComponent: React.FC<DateRangePickerProps> = ({ onDateChange
         />
       </div>
      </div>
+       </div>
     </LocalizationProvider>
   );
 };
