@@ -50,7 +50,8 @@ const RoomCategoryTable: React.FC<RoomCategoryTableProps> = ({ roomCategories })
   const monthYearLabels = getMonthYearLabels(dates.filter(date => date)); // Filter out undefined dates
 
   return (
-    <TableContainer component={Paper} className='bg-white rounded-2xl m-10 '>
+    
+  <TableContainer component={Paper} className=' bg-white rounded-2xl m-10 ' >
       <Table>
         <TableHead >
           <TableRow >
@@ -58,7 +59,7 @@ const RoomCategoryTable: React.FC<RoomCategoryTableProps> = ({ roomCategories })
             {dates.map((date, index) => (
               <React.Fragment key={index} >
                 {index === 0 || !monthYearLabels[index] || monthYearLabels[index].label !== monthYearLabels[index - 1].label ? (
-                  <TableCell  colSpan={monthYearLabels[index]?.span}>
+                  <TableCell  colSpan={monthYearLabels[index]?.span} >
                     {monthYearLabels[index]?.label}
                   </TableCell>
                 ) : null}
@@ -68,23 +69,23 @@ const RoomCategoryTable: React.FC<RoomCategoryTableProps> = ({ roomCategories })
           <TableRow>
             <TableCell></TableCell>
             {dates.map((date, index) => (
-              <TableCell key={index} >
+              <TableCell key={index} className='top_position'>
                 {format(parseISO(date), 'EEE')}<br />
                 {format(parseISO(date), 'dd')}
               </TableCell>
             ))}
           </TableRow>
         </TableHead>
-        <TableBody>
+        <TableBody >
           {roomCategories.map((roomCategory, rcIndex) => (
             <React.Fragment key={rcIndex}>
               <TableRow>
-                <TableCell colSpan={dates.length + 1} className='min-w-66 text-xl font-bold'>
+                <TableCell colSpan={dates.length + 1} className='min-w-66 text-xl font-bold container'>
                   {roomCategory.name}
                 </TableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Status</TableCell>
+                <TableCell className='container'>Status</TableCell>
                 {dates.map((date, index) => {
                   const inventory = roomCategory.inventory_calendar.find(inv => format(parseISO(inv.date), 'yyyy-MM-dd') === format(parseISO(date), 'yyyy-MM-dd'));
                   return (
@@ -101,7 +102,7 @@ const RoomCategoryTable: React.FC<RoomCategoryTableProps> = ({ roomCategories })
                 })}
               </TableRow>
               <TableRow>
-                <TableCell>Rooms to Sell</TableCell>
+                <TableCell className='container'>Rooms to Sell</TableCell>
                 {dates.map((date, index) => {
                   const inventory = roomCategory.inventory_calendar.find(inv => format(parseISO(inv.date), 'yyyy-MM-dd') === format(parseISO(date), 'yyyy-MM-dd'));
                   return (
@@ -118,7 +119,7 @@ const RoomCategoryTable: React.FC<RoomCategoryTableProps> = ({ roomCategories })
                 })}
               </TableRow>
               <TableRow>
-                <TableCell>Net Booked</TableCell>
+                <TableCell className='container'>Net Booked</TableCell>
                 {dates.map((date, index) => {
                   const inventory = roomCategory.inventory_calendar.find(inv => format(parseISO(inv.date), 'yyyy-MM-dd') === format(parseISO(date), 'yyyy-MM-dd'));
                   return (
@@ -137,7 +138,7 @@ const RoomCategoryTable: React.FC<RoomCategoryTableProps> = ({ roomCategories })
               {roomCategory.rate_plans.map((ratePlan, rpIndex) => (
                 <React.Fragment key={rpIndex}>
                   <TableRow>
-                    <TableCell className='min-w-56'>{ratePlan.name}
+                    <TableCell className='min-w-56 container'>{ratePlan.name}
                     <TableCell colSpan={dates.length} className='text-blue-500'><PersonIcon /> <span className='px-1'>x</span>{roomCategory.occupancy}</TableCell>
                     </TableCell>
                     {dates.map((date, index) => {
@@ -158,7 +159,7 @@ const RoomCategoryTable: React.FC<RoomCategoryTableProps> = ({ roomCategories })
                     })}
                   </TableRow>
                   <TableRow>
-                    <TableCell>Min Length of Stay</TableCell>
+                    <TableCell className='container'>Min Length of Stay</TableCell>
                     {dates.map((date, index) => {
                       const rateForDate = ratePlan.calendar.find(rate => format(parseISO(rate.date), 'yyyy-MM-dd') === format(parseISO(date), 'yyyy-MM-dd'));
                       const inventory = roomCategory.inventory_calendar.find(inv => format(parseISO(inv.date), 'yyyy-MM-dd') === format(parseISO(date), 'yyyy-MM-dd'));
@@ -175,7 +176,7 @@ const RoomCategoryTable: React.FC<RoomCategoryTableProps> = ({ roomCategories })
                     })}
                   </TableRow>
                   <TableRow>
-                    <TableCell>Reservation Deadline</TableCell>
+                    <TableCell className='container'>Reservation Deadline</TableCell>
                     {dates.map((date, index) => {
                       const rateForDate = ratePlan.calendar.find(rate => format(parseISO(rate.date), 'yyyy-MM-dd') === format(parseISO(date), 'yyyy-MM-dd'));
                       const inventory = roomCategory.inventory_calendar.find(inv => format(parseISO(inv.date), 'yyyy-MM-dd') === format(parseISO(date), 'yyyy-MM-dd'));
@@ -198,6 +199,7 @@ const RoomCategoryTable: React.FC<RoomCategoryTableProps> = ({ roomCategories })
         </TableBody>
       </Table>
     </TableContainer>
+    
   );
 };
 

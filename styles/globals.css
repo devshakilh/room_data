@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body{
-    padding: 25px;
+    padding: 5px;
+    background-color: aliceblue;
 }
 
 .header_text{
@@ -12,6 +13,15 @@ body{
    
 }
 
-body{
-    background-color: aliceblue;
+
+
+.container{
+    position: sticky!important;
+   left: 0px;
+   background-color: azure;
 }
+/* .top_position{
+    position: !important;
+    top: 2px;
+    
+} */
