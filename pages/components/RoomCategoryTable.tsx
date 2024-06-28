@@ -4,6 +4,8 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
 import { format, parseISO, getMonth, getYear } from 'date-fns';
 import { IRoomCategory } from '../types/IRoomCategory';
 import PersonIcon from '@mui/icons-material/Person';
+import AddIcon from '@mui/icons-material/Add';
+
 
 interface RoomCategoryTableProps {
   roomCategories: IRoomCategory[];
@@ -81,7 +83,9 @@ const RoomCategoryTable: React.FC<RoomCategoryTableProps> = ({ roomCategories })
             <React.Fragment key={rcIndex}>
               <TableRow>
                 <TableCell colSpan={dates.length + 1} className='min-w-66 text-xl font-bold container'>
-                  {roomCategory.name}
+                <div>
+                  <span>  {roomCategory.name}</span> <button className='bg-orange-500 font-bold px-4 py-2 text-white ml-[125vh] rounded-md'><AddIcon className='font-bold'/> <span className='font-medium text-[18px]'>BULK EDIT</span></button>
+                </div>
                 </TableCell>
               </TableRow>
               <TableRow>
